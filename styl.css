@@ -1,0 +1,122 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+#tytuł{
+    text-align: center;
+    font-size: 170px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aqua;
+    width: 40%;
+    
+}
+
+#glowny{
+    justify-content: center;
+    background-color: rgba(240, 248, 255, 0.822);
+    height: 70%;
+    font-size: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 53%;
+    border-radius: 20px;
+}
+#glowny a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: x-large;
+}
+
+#glowny div{
+    padding: 20px;
+    width: 200px;
+    margin: 10px;
+    background-color: rgba(128, 128, 128, 0.705);
+    border-radius: 20px;
+    height: 220px;
+}
+
+#glowny img{
+    text-align: center;
+    width: 155px;
+    height: 145px;
+}
+
+
+
+html, body {
+      height: 100%;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+    }
+
+.slide1{
+    height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3em;
+      color: white;
+}
+
+.slide2, .slide3, .slide4, .slide5, .slide6, .slide7 {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 3em;
+      color: white;
+}
+
+main {
+      height: 100%;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      -ms-overflow-style: none;  /* IE/Edge */
+      scrollbar-width: none;     /* Firefox */
+    }
+
+    main::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+    }
+.box{
+    width: 90%;
+    margin-left: 150px;
+    flex-wrap: wrap;
+    display: flex;
+
+}
+.boxsocial{
+    width: 180px;
+    height: 180px;
+    margin: 60px;
+}
+.boxsocial img{
+    padding: 10px;
+    width: 130px;
+    height: 130px;
+    transition: 1s;
+}
+.boxsocial img:hover{
+    width: 150px;
+    height: 150px;
+}
+
+.slide1 { background: #1abc9c; }
+.slide2 { background: #3498db; }
+.slide3 { background: #9b59b6; }
+.slide4 { background: #e74c3c; }
+.slide5 { background: #105ea7; }
+.slide6 { background: #db2dc4; }
+.slide7 { background: #bbda11; }
