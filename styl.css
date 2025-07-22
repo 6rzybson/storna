@@ -3,18 +3,21 @@
       padding: 0;
       box-sizing: border-box;
     }
-.container {
+.container8 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
       gap: 16px;
       padding: 20px;
     }
 
-    .block {
+    .block8 {
       background-color: #f0f0f0;
       border-radius: 8px;
       padding: 20px;
+      text-align: center;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+
     }
 
     @media (max-width: 400px) {
@@ -22,44 +25,105 @@
         padding: 15px;
       }
     }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
 
+.block {
+  position: relative;
+  width: 320px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 10px;
+  transition: 1s;
+}
+
+/* Styl tła z rozmyciem */
+.block > div[class^="tlo"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  z-index: 1;
+  transform: scale(0.8); /* usuwa ostre krawędzie blur */
+}
+
+/* Warstwa z treścią */
+.tresc {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+.tresc a{
+    text-decoration: none;
+    color: white;
+}
+.block:hover{
+    transform: scale(1.4);
+    filter: blur(1px);
+    color: black;
+}
+.tlo1 {
+  background-image: url('strona.png');
+}
+
+.tlo2 {
+  background-image: url('arduino1.png');
+}
+
+.tlo3 {
+  background-image: url('liga.png');
+}
+
+.tlo4 {
+  background-image: url('social.png');
+}
+
+.tlo5 {
+  background-image: url('studia.png');
+}
+
+.tlo6 {
+  background-image: url('Programming.png');
+}
+
+
+.container2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+      gap: 16px;
+      padding: 20px;
+    }
+
+.block2 {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 #tytuł{
     text-align: center;
     font-size: 170px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: aqua;
-    width: 40%;
+    width: 50%;
     
 }
 
-#glowny{
-    justify-content: center;
-    background-color: rgba(240, 248, 255, 0.822);
-    height: 70%;
-    font-size: 24px;
-    display: flex;
-    flex-wrap: wrap;
-    width: 53%;
-    border-radius: 20px;
-}
-.block a{
-    text-decoration: none;
-    color: black;
-    text-align: center;
-    font-size: 80px;
-    
-}
-
-
-
-.block img{
-    text-align: center;
-    width: 65px;
-    height: 65px;
-    padding: 1px;
-    margin: 5px;
-}
 
 
 
@@ -79,6 +143,7 @@ html, body {
       justify-content: center;
       font-size: 3em;
       color: white;
+       overflow: hidden;
 }
 
 .slide2, .slide3, .slide4, .slide5, .slide6, .slide7 {
@@ -91,6 +156,7 @@ html, body {
       justify-content: center;
       font-size: 3em;
       color: white;
+       overflow: hidden;
 }
 
 main {
@@ -135,3 +201,26 @@ main {
 .slide5 { background: #105ea7; }
 .slide6 { background: #db2dc4; }
 .slide7 { background: #bbda11; }
+
+.stopka-sociale {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5); /* lekko przezroczyste tło */
+  padding: 2px 6px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px); /* opcjonalnie: delikatne rozmycie tła */
+}
+
+.stopka-sociale a img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.stopka-sociale a img:hover {
+  transform: scale(1.2);
+}
