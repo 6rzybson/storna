@@ -170,7 +170,7 @@ header{
       font-size: 3em;
       color: rgb(111, 223, 139);
        overflow: hidden;
-  height: 7vh;
+  height: 10vh;
 }
 
 html, body {
@@ -181,7 +181,7 @@ html, body {
     }
 
 .slide1{
-    height: 93vh;
+    height: 90vh;
       width: 100vw;
       
       display: flex;
