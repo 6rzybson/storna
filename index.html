@@ -96,7 +96,18 @@
 !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script></section>
   <section id = "slide7.6" class="slide7">
-    <h2>Konwerter walut</h2>
+    <!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Konwerter Walut</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    input, select, button { margin: 5px; padding: 5px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>Konwerter walut</h2>
   <input type="number" id="amount" placeholder="Kwota" step="any" />
   <select id="from">
     <option value="PLN" selected>PLN</option>
@@ -128,14 +139,17 @@
       }
 
       try {
-        const url = `https://api.exchangerate.host/convert?from=${from}&to=${to}&amount=${amount}`;
+        const url = `https://api.exchangerate.host/latest?base=${from}&symbols=${to}`;
         const response = await fetch(url);
         const data = await response.json();
 
-        if (data.result !== undefined) {
-          resultElement.textContent = `${amount} ${from} = ${data.result.toFixed(2)} ${to}`;
+        const rate = data.rates[to];
+
+        if (rate) {
+          const converted = amount * rate;
+          resultElement.textContent = `${amount} ${from} = ${converted.toFixed(2)} ${to}`;
         } else {
-          resultElement.textContent = "Błąd w przeliczaniu.";
+          resultElement.textContent = "Nie udało się pobrać kursu.";
         }
       } catch (error) {
         resultElement.textContent = "Błąd sieci lub API.";
@@ -143,6 +157,9 @@
       }
     }
   </script>
+</body>
+</html>
+
   </section>
 </main>
 </body>
